@@ -1,0 +1,15 @@
+version: "2"
+
+services:
+  micro-api:
+    build:
+      context: .
+    image: micro-api
+    container_name: api-server
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres123@postgresql-server/apidb
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    ports:
+      - "8000:8000"

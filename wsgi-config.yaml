@@ -1,0 +1,9 @@
+uwsgi:
+    chdir: /opt/applications/micro-api
+    module: api
+    callable: app
+    master: true
+    processes: 3
+    http-socket: :8000
+    vaccum: true
+    die-on-term: true
